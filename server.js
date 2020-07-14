@@ -234,12 +234,24 @@ router.get('/user/:id/game/:gameId', function (req, res) {
  *      schema:
  *        type: "array"
  *        items:
- *          $ref: "#/definitions/User"
+ *          $ref: "#/definitions/User"   
  *    responses:
  *      '200': 
  *        description: A succesful response.
  *      '400': 
  *        description: Invalid user info.
+ * 
+ * definitions:
+ *  User:
+ *    type: "object"
+ *    properties:
+ *      id:
+ *        type: "integer"
+ *        format: "int64"
+ *      name:
+ *        type: "string"
+ *      email:
+ *        type: "string"
  */
   router.post('/user', function (req, res) {
     const user = req.body;
